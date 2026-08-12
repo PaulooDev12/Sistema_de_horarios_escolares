@@ -22,7 +22,7 @@ public class TimeFoldConfig{
                 .withEntityClasses(AulaAgendada.class)
                 .withConstraintProviderClass(HorarioConstraintProvider.class)
                 .withTerminationConfig(new TerminationConfig()
-                        .withSpentLimit(Duration.ofSeconds(10))
+                        .withSpentLimit(Duration.ofSeconds(30))
                 );
         return SolverManager.create(SolverFactory.create(solverConfig));
     }

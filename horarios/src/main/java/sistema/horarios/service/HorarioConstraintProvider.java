@@ -39,7 +39,7 @@ public class HorarioConstraintProvider implements ConstraintProvider {
                 Joiners.equal(AulaAgendada::getTurma),
                 Joiners.equal(AulaAgendada::getDisciplina),
                 Joiners.equal(AulaAgendada::getDiaDaSemana))
-                .penalize(HardSoftScore.ONE_HARD)
+                .penalize(HardSoftScore.ONE_SOFT)
                 .asConstraint("Espalhar dia das semanas");
     }
 }
