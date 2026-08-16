@@ -10,6 +10,7 @@ import sistema.horarios.service.GeradorHorarioService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/horarios")
 public class HorariosController {

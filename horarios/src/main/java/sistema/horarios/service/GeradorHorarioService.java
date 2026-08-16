@@ -19,12 +19,10 @@ public class GeradorHorarioService {
     private final CargaHorariaRepository cargaHorariaRepository;
     private final SolverManager<GradeHoraria, Long> solverManager;
 
-
-    private static final int PERIODOS_POR_TURNO = 6;
-
     @Transactional
     public void gerarHorariosPorTurno(Turno turno) {
-        aulaAgendadaRepository.deleteByTurmaTurno(turno);
+        List<AulaAgendada> aulasAntigas = aulaAgendadaRepository.findByTurma_Turno(turno);
+        aulaAgendadaRepository.deleteAll(aulasAntigas);
         List<CargaHoraria> requisitos = cargaHorariaRepository.findByTurmaTurno(turno);
         List<AulaAgendada> aulasParaAgendar = new ArrayList<>();
         long idVirtual = 1L;

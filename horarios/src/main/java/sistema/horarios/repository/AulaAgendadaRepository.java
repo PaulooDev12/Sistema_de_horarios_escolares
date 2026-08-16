@@ -10,4 +10,5 @@ public interface AulaAgendadaRepository extends JpaRepository<AulaAgendada, Long
     void deleteByTurmaTurno(Turno turno);
     List<AulaAgendada> findByTurma_TurnoOrderByDiaDaSemanaAscPeriodoAsc(Turno turno);
     List<AulaAgendada> findByTurmaIdOrderByDiaDaSemanaAscPeriodoAsc(Long id);
+    List<AulaAgendada> findByTurma_Turno(Turno turno);
 }
